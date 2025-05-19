@@ -2,7 +2,8 @@ import pandas as pd
 import streamlit as st
 import matplotlib.pyplot as plt
 import plotly.express as px
-def mostrar_grafico_barras(df): 
+def mostrar_grafico_barras(df):
+
     df['Fecha'] = pd.to_datetime(df['Fecha'])
     hoy = pd.Timestamp.today().date()
     df_hoy = df[df['Fecha'].dt.date == hoy]
