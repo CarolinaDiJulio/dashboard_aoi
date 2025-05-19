@@ -39,5 +39,6 @@ with st.container():
             mostrar_tiempo_medio(df,hoy)
         with st.container():
             st.write("tiempo")
+            mostrar_tiempo_medio_record(df)
 
 mostrar_tabla(df)
