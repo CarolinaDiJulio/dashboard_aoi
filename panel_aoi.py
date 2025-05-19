@@ -29,16 +29,15 @@ with st.container():
     mostrar_tarjetas_paneles(df, hoy)
 
 with st.container():
-    col1, col2 = st.columns([2,1])
+    col1, col2, col3 = st.columns([2, 1, 1])
 
     with col1:
         mostrar_grafico_barras(df) 
 
-    with col2:
-        with st.container():
-            mostrar_tiempo_medio(df,hoy)
-        with st.container():
-            st.write("tiempo")
-            mostrar_tiempo_medio_record(df)
+    with col2: 
+            mostrar_tiempo_medio(df,hoy) 
+            
+    with col3:
+        mostrar_tiempo_medio_record(df)
 
 mostrar_tabla(df)
