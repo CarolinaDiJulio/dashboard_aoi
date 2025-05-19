@@ -22,4 +22,20 @@ def mostrar_tiempo_medio(df,hoy):
     # Mostrar en Streamlit
     st.plotly_chart(fig, use_container_width=True)
 
+def mostrar_tiempo_medio_record(df):
+     
+    tiempo_medio_record = df['Tiempo medio'].min()
+     
+    fechas_record = df[df['Tiempo medio'] == tiempo_medio_record]['Fecha']
+    
+    fecha_record = fechas_record.iloc[0] if not fechas_record.empty else None
 
+    fig = go.Figure(go.Indicator(
+        mode = "number",
+        value = tiempo_medio_record,
+        number = {'suffix': " seg", 'font': {'size': 36}},
+        title = {'text': f"Record tiempo medio<br><span style='font-size:16px'>{fecha_record.strftime('%d-%m-%Y') if fecha_record is not None else ''}</span>", 'font': {'size': 20}}
+    ))
+
+    st.plotly_chart(fig, use_container_width=True)
+    

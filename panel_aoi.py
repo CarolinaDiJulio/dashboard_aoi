@@ -5,6 +5,7 @@ from graficos.tabla import mostrar_tabla
 from graficos.grafico_barras import mostrar_grafico_barras
 from graficos.tiempo_medio  import mostrar_tiempo_medio
 from graficos.tarjetas_paneles  import mostrar_tarjetas_paneles
+from graficos.tiempo_medio  import mostrar_tiempo_medio_record
 
 st.set_page_config(layout="wide",page_title="D2 PLUS - AOI") 
 
@@ -34,6 +35,9 @@ with st.container():
         mostrar_grafico_barras(df) 
 
     with col2:
-        mostrar_tiempo_medio(df,hoy)
+        with st.container:
+            mostrar_tiempo_medio(df,hoy)
+        with st.container:
+            mostrar_tiempo_medio_record(df)
 
 mostrar_tabla(df)
