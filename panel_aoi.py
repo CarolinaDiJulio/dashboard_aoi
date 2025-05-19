@@ -11,6 +11,7 @@ st.set_page_config(layout="wide",page_title="D2 PLUS - AOI")
 with open("styles.css") as f:
     st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
 
+df = pd.read_csv("datos_diarios.csv", encoding="latin1")
 hoy = pd.Timestamp.today().date().strftime("%d-%m-%Y")
 
 
@@ -23,15 +24,16 @@ with st.container():
     with col3:
         st.markdown(f'<div class="subtitulo">{hoy}</div>', unsafe_allow_html=True)
 
-mostrar_tarjetas_paneles()
+with st.container():
+    mostrar_tarjetas_paneles(df, hoy)
 
 with st.container():
     col1, col2 = st.columns([2,1])
 
     with col1:
-        mostrar_grafico_barras() 
+        mostrar_grafico_barras(df) 
 
     with col2:
-        mostrar_tiempo_medio()
+        mostrar_tiempo_medio(df,hoy)
 
-mostrar_tabla()
+mostrar_tabla(df)
