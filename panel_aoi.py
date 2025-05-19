@@ -35,9 +35,9 @@ with st.container():
         mostrar_grafico_barras(df) 
 
     with col2:
-        with st.container:
+        with st.container():
             mostrar_tiempo_medio(df,hoy)
-        with st.container:
+        with st.container():
             mostrar_tiempo_medio_record(df)
 
 mostrar_tabla(df)
