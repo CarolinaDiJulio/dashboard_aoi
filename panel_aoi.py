@@ -33,10 +33,8 @@ with st.container():
 
     with col1:
         mostrar_grafico_barras(df) 
-
     with col2: 
             mostrar_tiempo_medio(df,hoy) 
-            
     with col3:
         mostrar_tiempo_medio_record(df)
 
