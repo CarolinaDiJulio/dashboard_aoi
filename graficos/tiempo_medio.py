@@ -21,3 +21,5 @@ def mostrar_tiempo_medio(df,hoy):
 
     # Mostrar en Streamlit
     st.plotly_chart(fig, use_container_width=True)
+
+

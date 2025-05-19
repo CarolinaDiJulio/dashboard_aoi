@@ -7,7 +7,7 @@ def mostrar_grafico_barras(df):
     hoy = pd.Timestamp.today().date()
     df_hoy = df[df['Fecha'].dt.date == hoy]
     if not df_hoy.empty:
-        df_hoy_total = df_hoy[['Paneles total', 'Paneles correctos', 'Paneles erroneos']].sum() 
+        df_hoy_total = df_hoy[['Paneles total', 'Paneles correctos', 'Paneles erroneos']]
         fig = px.bar(df_hoy_total,  
                     x=df_hoy_total.index,  
                     y=df_hoy_total.values, 
