@@ -42,7 +42,7 @@ if not df_hoy.empty:
         mostrar_tarjetas_paneles(df_hoy)
 
     with st.container():
-        col1, col2, col3= st.columns([2, 1, 1]) 
+        col1, col2, col3= st.columns([3, 1, 1]) 
         with col1:
             mostrar_grafico_barras(df_hoy) 
         with col2: 
